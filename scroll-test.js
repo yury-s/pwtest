@@ -1,7 +1,7 @@
 const playwright = require('playwright-core');
 (async() => {
     const browser = await playwright.chromium.launch({
-        // channel: 'msedge',
+        channel: 'msedge',
         headless: false,
         ignoreDefaultArgs: ['--hide-scrollbars']
     });
@@ -19,7 +19,7 @@ const playwright = require('playwright-core');
     //         });
     //     })()`);
     // });
-    await page.goto('file:///home/yurys/sandbox/pwtest/page.html');
+    await page.goto('file:///Users/yurys/sandbox/pwtest/page.html');
     await page.screenshot({ path: `scroll-bug-screenshot.png` });
-    await browser.close();
+    // await browser.close();
 })();
