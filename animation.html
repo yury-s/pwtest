@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+div {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  position: absolute;
+  /* animation-name: example; */
+  /* animation-duration: 20s; */
+}
+
+</style>
+<script>
+  function myFunction() {
+    var div = document.getElementById("myDIV");
+    let x = 0;
+    setInterval(() => {
+      ++x;
+      x %= 200;
+      div.style.left = x + "px";
+    }, 16);
+  }
+</script>
+<body onload="myFunction()">
+
+<h1>CSS Animation</h1>
+
+<p>The animation-delay property specifies a delay for the start of an animation. The following example has a 2 seconds delay before starting the animation:</p>
+
+<div id="myDIV"></div>
+
+</body>
+</html>
+
+
