@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Demonstration</title>
+    <style>
+        .event-box {
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+            display: inline-block;
+            text-align: center;
+            line-height: 100px;
+            border: 2px solid black;
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Event Demonstration</h1>
+    <div class="event-box" id="touchBox">Touch</div>
+    <div class="event-box" id="pointerBox">Pointer</div>
+    <div class="event-box" id="mouseBox">Mouse</div>
+    <div id="output"></div>
+
+    <script>
+        // Touch Events
+        const touchBox = document.getElementById('touchBox');
+        touchBox.addEventListener('touchstart', (event) => {
+            logEvent('Touch Start');
+            event.preventDefault(); // Prevent default scrolling
+        });
+        touchBox.addEventListener('touchmove', (event) => {
+            logEvent('Touch Move');
+        });
+        touchBox.addEventListener('touchend', (event) => {
+            logEvent('Touch End');
+        });
+
+        // Pointer Events
+        const pointerBox = document.getElementById('pointerBox');
+        pointerBox.addEventListener('pointerdown', (event) => {
+            logEvent('Pointer Down');
+        });
+        pointerBox.addEventListener('pointermove', (event) => {
+            logEvent('Pointer Move');
+        });
+        pointerBox.addEventListener('pointerup', (event) => {
+            logEvent('Pointer Up');
+        });
+
+        // Mouse Events
+        const mouseBox = document.getElementById('mouseBox');
+        mouseBox.addEventListener('mousedown', (event) => {
+            logEvent('Mouse Down');
+        });
+        mouseBox.addEventListener('mousemove', (event) => {
+            logEvent('Mouse Move');
+        });
+        mouseBox.addEventListener('mouseup', (event) => {
+            logEvent('Mouse Up');
+        });
+
+        // Function to log events
+        function logEvent(message) {
+            const output = document.getElementById('output');
+            const newEvent = document.createElement('div');
+            newEvent.textContent = message;
+            output.appendChild(newEvent);
+        }
+    </script>
+</body>
+</html>
